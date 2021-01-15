@@ -13,11 +13,6 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            'name'      => 'Admin Toko Online',
-            'email'     => 'admin2@gmail.com',
-            'password'  => bcrypt('password')
-        ]);
-        //factory(User::class, 50)->create();
+        factory(App\Models\User::class, 50)->create();
     }
 }
