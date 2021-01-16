@@ -18,14 +18,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware('auth')->group(function(){
+    
+    Route::get('/dashboard','Dashboard\DashboardController@index');
 
-Route::get('/dashboard','Dashboard\DashboardController@index');
-
-//Users
-Route::get('/dashboard/users','Dashboard\UserController@index')->name('dashboard.users');
-Route::get('/dashboard/users/edit/{id}','Dashboard\UserController@edit')->name('dashboard.users.edit');
-Route::post('/dashboard/users/{id}','Dashboard\UserController@update')->name('dashboard.users.update');
-Route::delete('/dashboard/users/{id}','Dashboard\UserController@destroy')->name('dashboard.users.delete');
-
-
+    //Users
+    Route::get('/dashboard/users','Dashboard\UserController@index')->name('dashboard.users');
+    Route::get('/dashboard/users/edit/{id}','Dashboard\UserController@edit')->name('dashboard.users.edit');
+    Route::post('/dashboard/users/{id}','Dashboard\UserController@update')->name('dashboard.users.update');
+    Route::delete('/dashboard/users/{id}','Dashboard\UserController@destroy')->name('dashboard.users.delete');
+});
