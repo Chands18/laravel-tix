@@ -30,7 +30,8 @@ class UserController extends Controller
         return view('dashboard/user/list',[
             'users' => $users,
             'request' => $request, 
-            'active' => $active]);
+            'active' => $active
+            ]);
     }
 
     /**
