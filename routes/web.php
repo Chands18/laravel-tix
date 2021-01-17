@@ -22,7 +22,15 @@ Route::middleware('auth')->group(function(){
 
     Route::get('/dashboard','Dashboard\DashboardController@index')->name('dashboard');
 
+    //Movies
     Route::get('/dashboard/movies','Dashboard\MovieController@index')->name('dashboard.movies');
+    Route::get('/dashboard/movies/create','Dashboard\MovieController@create')->name('dashboard.movies.create');
+    Route::get('/dashboard/movies/{id}','Dashboard\MovieController@edit')->name('dashboard.movies.edit');
+    Route::put('/dashboard/movies/{id}','Dashboard\MovieController@update')->name('dashboard.movies.update');
+    Route::post('/dashboard/movies','Dashboard\MovieController@store')->name('dashboard.movies.store');
+    Route::delete('/dashboard/movies','Dashboard\MovieController@destroy')->name('dashboard.movies.delete');
+
+
     Route::get('/dashboard/theaters','Dashboard\TheaterController@index')->name('dashboard.theaters');
     Route::get('/dashboard/tickets','Dashboard\TicketController@index')->name('dashboard.tickets');
 
