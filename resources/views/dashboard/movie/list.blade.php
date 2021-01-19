@@ -43,7 +43,7 @@
                                 <td>
                                     <h4><strong>{{ $movie->title }}<strong></h4>
                                 </td>
-                                <td><a href="{{ route('dashboard.movies.edit',['id' =>$movie->id]) }}" title="edit" class="btn btn-success btn-sm">
+                                <td><a href="{{ route('dashboard.movies.edit', $movie->id) }}" title="edit" class="btn btn-success btn-sm">
                                     <i class="fas fa-edit"></i></a>
                                 </td>
                             </tr>
