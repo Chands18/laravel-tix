@@ -81,7 +81,8 @@ class MovieController extends Controller
             $movie->save();
             
             return redirect()
-                    ->route('dashboard.movies');
+                    ->route('dashboard.movies')
+                    ->with('message',__('messages.store', ['title' => $request->input('title')]));
         }
     }
 
@@ -150,7 +151,8 @@ class MovieController extends Controller
             $movie->save();
             
             return redirect()
-                    ->route('dashboard.movies');
+                    ->route('dashboard.movies')
+                    ->with('message',__('messages.update', ['title' => $request->input('title')]));
         }
     }
 
@@ -162,8 +164,11 @@ class MovieController extends Controller
      */
     public function destroy(Movie $movie)
     {
+        $title = $movie->title;
+
         $movie->delete();
         return redirect()
-                ->route('dashboard.movies');
+                ->route('dashboard.movies')
+                ->with('message',__('messages.delete', ['title' => $title]));
     }
 }
