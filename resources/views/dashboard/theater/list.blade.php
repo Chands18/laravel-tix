@@ -62,7 +62,7 @@
 
                 {{ $theaters->appends($request)->links()}}
             @else
-                <h4 class="text-center p-3">Data theater belum ada</h4>
+                <h4 class="text-center p-3">{{ __('messages.no_data', ['module'=>'Theater']) }}</h4>
             @endif
         </div> 
     </div>

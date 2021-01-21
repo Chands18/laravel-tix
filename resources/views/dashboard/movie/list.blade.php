@@ -62,7 +62,7 @@
 
                 {{ $movies->appends($request)->links()}}
             @else
-                <h4 class="text-center p-3">Data movie belum ada</h4>
+                <h4 class="text-center p-3">{{ __('messages.no_data', ['module'=>'Movie']) }}</h4>
             @endif
         </div> 
     </div>
