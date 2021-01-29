@@ -50,6 +50,9 @@
                                     <input type="radio" name="status" class="form-check-input" value="inactive" id="inactive">
                                     <label for="inactive" class="form-check-label">inactive</label>
                                 </div>
+                                @error('status')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>   
                         <div class="form-group mb-0">
                             <button type="button" onclick="window.history.back()" class="btn btn-sm btn-info">Cancel</button>
